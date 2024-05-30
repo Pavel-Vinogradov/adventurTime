@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "00fffd6cb166c864d47e6274b97f70b5",
+    "content-hash": "22a0ac68d8957ce1cddbc52df7eae8cc",
     "packages": [
         {
             "name": "jdrieghe/array-helpers",
@@ -2680,6 +2680,56 @@
                 }
             ],
             "time": "2024-04-28T11:44:19+00:00"
+        },
+        {
+            "name": "tizix/data-transfer-object",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Pavel-Vinogradov/data-transfer-object.git",
+                "reference": "68ab23bcbfae31f3671b4ce344bcb56cd5b6995b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Pavel-Vinogradov/data-transfer-object/zipball/68ab23bcbfae31f3671b4ce344bcb56cd5b6995b",
+                "reference": "68ab23bcbfae31f3671b4ce344bcb56cd5b6995b",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.26",
+                "laravel/pint": "^1.13",
+                "orchestra/testbench": "^8.10",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^10.3"
+            },
+            "default-branch": true,
+            "type": "laravel-data-transfer-object",
+            "extra": {
+                "laravel": {
+                    "providers": []
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Tizix\\DataTransferObject\\": "src/"
+                },
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-only"
+            ],
+            "description": "Basic components of laravel",
+            "support": {
+                "issues": "https://github.com/Pavel-Vinogradov/data-transfer-object/issues",
+                "source": "https://github.com/Pavel-Vinogradov/data-transfer-object/tree/master"
+            },
+            "time": "2024-04-11T16:10:38+00:00"
         }
     ],
     "packages-dev": [
@@ -6673,6 +6723,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
+        "tizix/data-transfer-object": 20,
         "roave/security-advisories": 20
     },
     "prefer-stable": true,
