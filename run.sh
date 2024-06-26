@@ -15,5 +15,7 @@ sleep 10
 echo "Installing Composer dependencies"
 docker-compose exec adventure-time.php composer install
 
-
+# Установка зависимостей Composer
+echo "Installing Composer dependencies"
+docker-compose exec -it adventure-time.php php bin/phpunit
 echo "All done!"

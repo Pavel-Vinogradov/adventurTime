@@ -1,0 +1,10 @@
+POST /api/discount HTTP/1.1
+Host: localhost:4300
+Content-Type: application/json
+
+{
+    "initialPrice": 10000,
+    "startDate": "2027-05-01",
+    "birthDate": "2000-01-01",
+    "paymentDate": "2026-10-30"
+}

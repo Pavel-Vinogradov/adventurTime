@@ -6,7 +6,7 @@ namespace App\Services;
 
 use App\Dto\DiscountDto;
 
-interface DiscountService
+interface DiscountStrategy
 {
     public function calculateDiscount(DiscountDto $discountDto): float;
 }

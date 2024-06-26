@@ -9,7 +9,7 @@ use Tizix\DataTransferObject\DataTransferObject;
 
 final class DiscountDto extends DataTransferObject
 {
-    public ?DateTimeImmutable $startDate;
+    public DateTimeImmutable $startDate;
 
     public ?DateTimeImmutable $paymentDate;
     public DateTimeImmutable $birthDate;

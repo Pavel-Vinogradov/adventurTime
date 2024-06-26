@@ -8,7 +8,7 @@ use Exception;
 use DateTimeImmutable;
 use App\Dto\DiscountDto;
 use App\Request\DiscountRequest;
-use App\Services\DiscountService;
+use App\Services\CombinedDiscountStrategy;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Tizix\DataTransferObject\Exceptions\UnknownProperties;
@@ -18,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 #[Route('/api/discount')]
 final class DiscountController extends AbstractController
 {
-    public function __construct(private readonly DiscountService $discountService) {}
+    public function __construct(private readonly CombinedDiscountStrategy $discountService) {}
 
     /**
      * @throws UnknownProperties
@@ -29,13 +29,13 @@ final class DiscountController extends AbstractController
     public function store(DiscountRequest $discountRequest): Response
     {
         $discountDto = new DiscountDto(
-            startDate: $discountRequest->startDate ? new DateTimeImmutable($discountRequest->startDate) : null,
+            startDate: $discountRequest->startDate ? new DateTimeImmutable($discountRequest->startDate) : new DateTimeImmutable(),
             paymentDate: $discountRequest->paymentDate ? new DateTimeImmutable($discountRequest->paymentDate) : null,
             birthDate: new DateTimeImmutable($discountRequest->birthDate),
             initialPrice: $discountRequest->initialPrice
         );
         $discountedCost = $this->discountService->calculateDiscount($discountDto);
 
-        return $this->json(['result' => $discountedCost]);
+        return $this->json(['discountedCost'=>$discountedCost]);
     }
 }
